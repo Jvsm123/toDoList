@@ -1,13 +1,10 @@
 import { Component } from 'react';
+import Routes from "./routes";
 
 export default class App extends Component< {}, {} >
 {
-    render(): React.ReactElement<HTMLElement>
+    render(): any
     {
-        return (
-            <div className="t">
-                Aqui tem coisa!
-            </div>
-        );
+        return <Routes/>
     };
 };

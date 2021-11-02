@@ -1,0 +1,30 @@
+.Header
+{
+    display: flex;
+    justify-content: flex-start;
+    padding-top: 3%;
+    padding-left: 3%;
+
+    .menu
+    {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        height: 25px;
+
+        .btn
+        {
+            width: 50px;
+            height: 5px;
+            border-radius: 5px;
+            background-color: white;
+
+            &:nth-child(1) { margin-bottom: 5px };
+            &:nth-child(2) { margin-bottom: 5px };
+            &:nth-child(3) { width: 30px };
+        }
+        &:hover { cursor: pointer };
+    }
+
+    h1 { margin: 2% auto 0px auto };
+}

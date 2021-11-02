@@ -1,0 +1,12 @@
+//Conf's e Global
+@import "./conf";
+@import "./global.scss";
+
+//Layouts's
+@import "./comps/ToDo.scss";
+
+//Elementos
+@import "./comps/Elementos/Header.scss";
+@import "./comps/Elementos/ButtonAdd.scss";
+@import "./comps/Elementos/Card.scss";
+@import "./comps/Elementos/DashBoard.scss"
