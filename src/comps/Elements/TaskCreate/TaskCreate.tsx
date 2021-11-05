@@ -1,13 +1,12 @@
 import { Component } from 'react';
 
-export default class TaskCreate extends Component< {}, {} >
+export default class TaskCreate extends Component<{}, {}>
 {
-    render(): React.ReactElement<HTMLElement>
-    {
+    render(): React.ReactElement<HTMLElement> {
         return (
             <div className="TaskCreate">
-                <input type="" placeholder="O que tem em mente?" />
-                <img src="" alt="" />
+                <input type="text" placeholder="O que tem em mente?" />
+                <img src="#" alt="#" />
                 <p>Categoria</p>
                 <button>Criar</button>
             </div>

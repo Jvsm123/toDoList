@@ -29,12 +29,12 @@ export default class Details extends React.Component< Props, any >
                     niv={1}
                     router={ this.props.location.state.dados[0] }
                 />
-
+             
                 <DashBoard
                     niv={1}
                     routerData={ this.props.location.state.dados[1] }
                 />
-
+             
                 <AddButton/>
             </main>
         );
