@@ -1,3 +1,5 @@
+import * as React from 'react';
+
 import Header from '../../Elements/Header/Header';
 import ButtonAdd from '../../Elements/ButtonAdd/ButtonAdd';
 import DashBoard from '../../Elements/DashBoard/DashBoard';
@@ -5,10 +7,10 @@ import DashBoard from '../../Elements/DashBoard/DashBoard';
 export default function ToDo()
 {
     return (
-        <main className="toDo">
-            <Header/>
+        <main className="Main">
+            <Header niv={0}/>
 
-            <DashBoard/>
+            <DashBoard niv={0}/>
 
             <ButtonAdd/>
         </main>

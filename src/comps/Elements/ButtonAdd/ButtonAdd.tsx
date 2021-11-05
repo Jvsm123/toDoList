@@ -1,10 +1,10 @@
-import * as React from 'react';
+import { Link } from 'react-router-dom';
 
 export default function ButtonAdd()
 {
     return (
-        <div className="btnAdd">
-            +
-        </div>
+        <Link to="/add">
+            <div className="btnAdd">+</div>
+        </Link>
     );
 };

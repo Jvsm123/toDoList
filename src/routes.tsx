@@ -8,9 +8,9 @@ export default function Routes()
 {
     return (
         <BrowserRouter>
-            <Route component={ ToDo } path="/"/>
-            <Route component={ Details } path="/details"/>
-            <Route component={ Add } path="/add"/>
+            <Route exact component={ ToDo } path="/"/>
+            <Route exact component={ Details } path="/details"/>
+            <Route exact component={ Add } path="/add"/>
         </BrowserRouter>
     );
 };
