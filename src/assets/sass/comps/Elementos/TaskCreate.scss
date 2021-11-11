@@ -4,4 +4,99 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+ 
+    input
+    {
+        padding: 1rem 2rem;
+        margin-bottom: 2rem;
+        border-radius: 4px;
+        width: 70%;
+        font-size: 20pt;
+     
+        &::placeholder { color: black };
+    }
+ 
+    .time
+    {
+        width: 70%;
+        display: flex;
+        align-items: center;
+     
+        img
+        {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+     
+        .dataInput
+        {
+            width: 14rem;
+            padding-right: 0px;
+            margin-bottom: 0px;
+            background-color: transparent;
+            color: white;
+            outline: none;
+         
+            &:hover { cursor: pointer };
+        }
+    }
+ 
+    .tag
+    {
+        width: 70%;
+        display: flex;
+        align-items: center;
+     
+        img
+        {
+            width: 1.5rem;
+            height: 1.5rem;
+        }
+     
+        select
+        {
+            margin-left: 2rem;
+            font-size: 20pt;
+            background-color: transparent;
+            color: white;
+         
+            &:hover { cursor: pointer };
+        }
+    };
+ 
+    .btnControl
+    {
+        width: 70%;
+        margin-top: 4rem;
+        display: flex;
+        justify-content: space-between;
+     
+        .btn
+        {
+            border-radius: 4px;
+            color: white;
+            font-size: 16pt;
+         
+            &:hover { cursor: pointer };
+         
+            &:nth-child(1)
+            {
+                background-color: $BTN_ADD;
+                padding-left: 2rem;
+                padding-right: 2rem;
+            };
+         
+            &:nth-child(2) { background-color: $LARANJA };
+         
+            button
+            {
+                color: white;
+                background-color: transparent;
+                padding: 1rem;
+                font-size: 16pt;
+             
+                &:hover { cursor: pointer };
+            }
+        }
+    }
 }

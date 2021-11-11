@@ -28,9 +28,7 @@ export default class TaskCards extends Component< Props, never >
                         checked
                     />
                 }
-                { !Feito &&
-                    <input type="checkbox"/>
-                }
+                { !Feito && <input type="checkbox"/> }
             </div>
         );
     };

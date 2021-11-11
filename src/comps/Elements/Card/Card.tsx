@@ -1,52 +1,48 @@
 import * as React from 'react';
 import { Link } from 'react-router-dom';
 
-import Sino from "../../../assets/img/bell.svg";
-import Carrinho from "../../../assets/img/cart.svg";
-import Lista from "../../../assets/img/list.svg";
-import Av from "../../../assets/img/send.svg";
-import Tags from "../../../assets/img/tags.svg";
+import Compras from "../../../assets/img/cart.svg";
+import Viagem from "../../../assets/img/send.svg";
 import Casa from "../../../assets/img/house.svg";
-import Log from "../../../assets/img/journal.svg";
-import Paleta from "../../../assets/img/palette.svg";
+import Lazer from "../../../assets/img/headphones.svg";
 import Trabalho from "../../../assets/img/briefcase.svg";
-import Fones from "../../../assets/img/headphones.svg";
-import Livro from "../../../assets/img/book.svg";
+import Estudos from "../../../assets/img/book.svg";
+import Hobby from "../../../assets/img/palette.svg";
+import Lembrete from "../../../assets/img/list.svg";
 
 export default function Card( props: any ): React.ReactElement<HTMLElement>
 {
-    const Quant: Number = props.tasks.Tarefas.length;
-    const Tarefas: Array<Object> = props.tasks.Tarefas;
-    const Nomes: String = props.tasks.Categoria;
-    const quant: String = (Quant > 1)? `${Quant} Tarefas` : `${Quant} Tarefa`;
-    const Tag: number = props.tasks.Tag;
-    const arr: Array<string> =
+    const quantTask: Number = props.tasks.Tarefas.length;
+    const tarefas: Array<Object> = props.tasks.Tarefas;
+    const nomes: string = props.tasks.id;
+    const quant: string = (quantTask > 1)? `${quantTask} Tarefas` : `${quantTask} Tarefa`;
+    const arr: Array<Object> =
     [
-        Sino,
-        Carrinho,
-        Lista,
-        Av,
-        Tags,
-        Casa,
-        Log,
-        Paleta,
-        Trabalho,
-        Fones,
-        Livro
+        {Compras: Compras},
+        {Viagem: Viagem},
+        {Casa: Casa},
+        {Lazer: Lazer},
+        {Trabalho: Trabalho},
+        {Estudos: Estudos},
+        {Hobby: Hobby},
+        {Lembrete: Lembrete}
     ];
-    const img: string = arr[ Tag ];
+    const imgRes: Array<Object> = arr.filter( i => i.hasOwnProperty(nomes) );
+    let img: string = "";
+    let res: any = imgRes.map( (i: Object) => Object.values(i) )
+    img = res[0];
  
     return (
         <div className="Card">
             <img src={ img } alt="#"/>
-            <Link to= {
+            <Link to={
             {
                 pathname: "/details",
-                state: { dados: [img, Tarefas] }
+                state: { dados: [img, tarefas] }
             }}
             >
                 <div className="info">
-                    <h2> { Nomes } </h2>
+                    <h2> { nomes } </h2>
                     <h5> { quant } </h5>
                 </div>
             </Link>

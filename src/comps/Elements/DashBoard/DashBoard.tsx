@@ -6,7 +6,7 @@ import TasksInfo from '../TaskInfo/TaskInfo';
 import TaskCreate from '../TaskCreate/TaskCreate';
 
 type Props = { niv: Number, routerData?: [Object] };
-type State = { dados: { tasks: Array<any> } };
+type State = { tasks: Array<any> };
 
 export default class DashBoard extends Component< Props, State >
 {
@@ -14,25 +14,20 @@ export default class DashBoard extends Component< Props, State >
     {
         super( props );
      
-        this.state =
-        {
-            dados: { tasks: [] },
-        };
+        this.state = { tasks: [] };
     };
  
     componentDidMount(): void
     {
         axios.get("http://localhost:3001/dados")
-            .then( (i: AxiosResponse) => this.setState( {dados: i.data} ) );
+            .then( (i: AxiosResponse) => this.setState( {tasks: i.data} ) );
     };
  
     render(): React.ReactElement<HTMLElement>
     {
-        const { dados } = this.state;
-     
         return (
             <div className="DashBoard">
-                { this.props.niv === 0 && dados.tasks.map( (i: any) =>
+                { this.props.niv === 0 && this.state.tasks.map( (i: any) =>
                   {
                     return <Card tasks={i}/>
                   })
@@ -41,5 +36,5 @@ export default class DashBoard extends Component< Props, State >
                 { this.props.niv === 2 && <TaskCreate /> }
             </div>
         );
-    }
+    };
 };

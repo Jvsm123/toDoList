@@ -1,24 +1,21 @@
 *
 {
-    box-sizing: border-box;
-
     margin: 0px;
     padding: 0px;
-
+    box-sizing: border-box;
     border: none;
-
     text-decoration: none;
 }
 
 :root
 {
     height: 100vh;
-
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-
     background-color: $FUNDO;
     color: $FONT;
 }
+
+a { color: white };
