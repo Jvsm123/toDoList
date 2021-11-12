@@ -9,9 +9,9 @@ export default class Add extends React.Component< {}, {} >
     {
         return (
             <main className="Main">
-                <Header niv={2}/>
+                <Header nivel={2}/>
 
-                <DashBoard niv={2}/>
+                <DashBoard nivel={2}/>
             </main>
         );
     };

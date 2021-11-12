@@ -3,4 +3,17 @@
     display: flex;
     justify-content: space-between;
     margin: 1rem;
+
+    s { text-decoration: line-through };
+ 
+    .taskControl
+    {
+        width: 4rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-between;
+        align-items: center;
+     
+        img { &:hover { cursor: pointer } };
+    }
 }

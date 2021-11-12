@@ -3,7 +3,7 @@ import Routes from "./routes";
 
 export default class App extends Component< {}, {} >
 {
-    render(): React.ReactElement<HTMLElement>
+    render()
     {
         return <Routes/>
     };

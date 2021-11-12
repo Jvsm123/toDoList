@@ -1,18 +1,21 @@
-import * as React from 'react';
+import { Component } from 'react';
 
 import Header from '../../Elements/Header/Header';
 import ButtonAdd from '../../Elements/ButtonAdd/ButtonAdd';
 import DashBoard from '../../Elements/DashBoard/DashBoard';
 
-export default function ToDo()
+export default class ToDo extends Component< {}, {} >
 {
-    return (
-        <main className="Main">
-            <Header niv={0}/>
-
-            <DashBoard niv={0}/>
-
-            <ButtonAdd/>
-        </main>
-    );
+    render()
+    {
+        return (
+            <main className="Main">
+                <Header nivel={0}/>
+             
+                <DashBoard nivel={0}/>
+             
+                <ButtonAdd/>
+            </main>
+        );
+    };
 };

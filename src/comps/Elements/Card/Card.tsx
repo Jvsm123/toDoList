@@ -12,11 +12,11 @@ import Lembrete from "../../../assets/img/list.svg";
 
 export default function Card( props: any ): React.ReactElement<HTMLElement>
 {
-    const quantTask: Number = props.tasks.Tarefas.length;
+    const totalTask: Number = props.tasks.Tarefas.length;
     const tarefas: Array<Object> = props.tasks.Tarefas;
-    const nomes: string = props.tasks.id;
-    const quant: string = (quantTask > 1)? `${quantTask} Tarefas` : `${quantTask} Tarefa`;
-    const arr: Array<Object> =
+    const idTag: string = props.tasks.id;
+    const totalTaskDisplay: string = (totalTask > 1) ? `${totalTask} Tarefas` : `${totalTask} Tarefa`;
+    const categorias: Array<Object> =
     [
         {Compras: Compras},
         {Viagem: Viagem},
@@ -27,23 +27,24 @@ export default function Card( props: any ): React.ReactElement<HTMLElement>
         {Hobby: Hobby},
         {Lembrete: Lembrete}
     ];
-    const imgRes: Array<Object> = arr.filter( i => i.hasOwnProperty(nomes) );
-    let img: string = "";
-    let res: any = imgRes.map( (i: Object) => Object.values(i) )
-    img = res[0];
+    const idCategoria: Array<Object> = categorias.filter( i => i.hasOwnProperty(idTag) );
+    const pathCategoria: any = idCategoria.map( (i: Object) => Object.values(i) )
+ 
+    let imgPath: string = "";
+    imgPath = pathCategoria[0];
  
     return (
         <div className="Card">
-            <img src={ img } alt="#"/>
+            <img src={ imgPath } alt="#"/>
             <Link to={
             {
                 pathname: "/details",
-                state: { dados: [img, tarefas] }
+                state: { dados: [imgPath, tarefas, idTag] }
             }}
             >
                 <div className="info">
-                    <h2> { nomes } </h2>
-                    <h5> { quant } </h5>
+                    <h2> { idTag } </h2>
+                    <h5> { totalTaskDisplay } </h5>
                 </div>
             </Link>
         </div>

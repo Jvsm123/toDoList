@@ -2,15 +2,14 @@ import * as React from 'react';
 
 import Header from '../../Elements/Header/Header';
 import DashBoard from '../../Elements/DashBoard/DashBoard';
-import AddButton from '../../Elements/ButtonAdd/ButtonAdd';
 
 type StateLocation =
 {
-    pathname: string,
-    search: string,
-    hash: string,
-    state: { dados: [ string, [Object] ] },
-    key: string
+    pathname: string;
+    search: string;
+    hash: string;
+    state: { dados: [ string, [Object], string ] };
+    key: string;
 };
 
 type Props =
@@ -26,16 +25,15 @@ export default class Details extends React.Component< Props, any >
         return (
             <main className="Main">
                 <Header
-                    niv={1}
+                    nivel={1}
                     router={ this.props.location.state.dados[0] }
                 />
              
                 <DashBoard
-                    niv={1}
-                    routerData={ this.props.location.state.dados[1] }
+                    nivel={1}
+                    routerDataTasks={ this.props.location.state.dados[1] }
+                    routerDataId={ this.props.location.state.dados[2] }
                 />
-             
-                <AddButton/>
             </main>
         );
     };

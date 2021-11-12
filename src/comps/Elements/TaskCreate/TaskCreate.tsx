@@ -7,16 +7,16 @@ import Tags from "../../../assets/img/tags.svg";
 
 type State =
 {
-    Nome: string | null,
-    Tempo: string | null,
-    Categoria: string,
-    Feito: boolean,
-    redirectTo: null | string
+    Nome: string | null;
+    Tempo: string | null;
+    Categoria: string;
+    Feito: boolean;
+    redirectTo: null | string;
 };
 
 export default class TaskCreate extends Component< {}, State >
 {
-    constructor( props: any )
+    constructor( props: Object )
     {
         super( props );
      
@@ -38,7 +38,7 @@ export default class TaskCreate extends Component< {}, State >
         ?   axios.get( "http://localhost:3001/dados" ).then( (i: any) =>
             {
                 const dado = i.data.filter( (j: any) => j.id === Categoria );
-
+             
                 console.log( dado );
              
                 ( dado.length < 1 )
@@ -76,7 +76,7 @@ export default class TaskCreate extends Component< {}, State >
     {
         if(this.state.redirectTo)
             return <Redirect to={this.state.redirectTo}/>
-
+     
         return (
             <div className="TaskCreate">
                 <input
