@@ -34,15 +34,15 @@ export default class TaskCreate extends Component< {}, State >
     {
         const { Nome, Tempo, Feito, Categoria } = this.state;
      
-        if( Nome !== null && Tempo !== null )
-         
-            axios.get( "http://localhost:3001/dados" ).then( (i: any) =>
+        ( Nome !== null && Tempo !== null )
+        ?   axios.get( "http://localhost:3001/dados" ).then( (i: any) =>
             {
-                let dado = i.data.filter ( (j: any) => j.id === Categoria );
+                const dado = i.data.filter( (j: any) => j.id === Categoria );
+
+                console.log( dado );
              
-                if ( !dado )
-                {
-                    axios.post( `http://localhost:3001/dados`,
+                ( dado.length < 1 )
+                ?   axios.post( `http://localhost:3001/dados`,
                     {
                         id: Categoria,
                         Tarefas: [
@@ -53,11 +53,9 @@ export default class TaskCreate extends Component< {}, State >
                         }]
                     })
                     .then( () => this.setState( { redirectTo: "/"} ) )
-                    .catch( (err) => console.log(err) );
-                }
-                else
-                {
-                    axios.put( `http://localhost:3001/dados/${Categoria}`,
+                    .catch( (err) => console.log(err) )
+                 
+                :   axios.put( `http://localhost:3001/dados/${Categoria}`,
                     {
                         id: dado[0].id,
                         Tarefas: [ ...dado[0].Tarefas,
@@ -69,15 +67,14 @@ export default class TaskCreate extends Component< {}, State >
                     })
                     .then( () => this.setState({ redirectTo: "/"}) )
                     .catch( (err) => console.log(err) );
-                };
-            });
+            })
          
-        else alert("Dados Invalidos!");
+        :   alert("Dados Invalidos!");
     };
  
     render(): React.ReactElement<HTMLElement>
     {
-        if( this.state.redirectTo )
+        if(this.state.redirectTo)
             return <Redirect to={this.state.redirectTo}/>
 
         return (

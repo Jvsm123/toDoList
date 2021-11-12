@@ -1,9 +1,9 @@
 import { Component } from 'react';
 
 type Props =
-{ 
+{
     task:
-    { 
+    {
         Nome: string,
         Tempo: string,
         Feito: boolean
@@ -20,15 +20,23 @@ export default class TaskCards extends Component< Props, never >
      
         return (
             <div className="TaskCards">
-                <h2>{ Nome }</h2>
-                <h4>{ Tempo }</h4>
                 { Feito &&
-                    <input
-                        type="checkbox"
-                        checked
-                    />
+                    <>
+                        <h2>{ Nome }</h2>
+                        <h4>{ Tempo }</h4>
+                        <input
+                            type="checkbox"
+                            checked
+                        />
+                    </>
                 }
-                { !Feito && <input type="checkbox"/> }
+                { !Feito &&
+                    <>
+                        <h2>{ Nome }</h2>
+                        <h4>{ Tempo }</h4>
+                        <input type="checkbox"/>
+                    </>
+                }
             </div>
         );
     };
