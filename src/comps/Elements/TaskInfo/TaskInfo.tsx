@@ -102,7 +102,6 @@ export default class TasksInfo extends Component< Props, State >
  
     render(): React.ReactElement<HTMLElement>
     {
-        console.log(this.state)
         if(this.state.redirectTo)
             return <Redirect to={this.state.redirectTo}/>
      
