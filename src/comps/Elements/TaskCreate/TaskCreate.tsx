@@ -39,8 +39,6 @@ export default class TaskCreate extends Component< {}, State >
             {
                 const dado = i.data.filter( (j: any) => j.id === Categoria );
              
-                console.log( dado );
-             
                 ( dado.length < 1 )
                 ?   axios.post( `http://localhost:3001/dados`,
                     {

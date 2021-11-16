@@ -11,6 +11,7 @@ type Props =
     routerDataTasks?: [Object],
     routerDataId?: string
 };
+
 type State = { tasks: Array<any> };
 
 export default class DashBoard extends Component< Props, State >
@@ -41,7 +42,8 @@ export default class DashBoard extends Component< Props, State >
                     && <TasksInfo
                             tasks={this.props.routerDataTasks}
                             id={this.props.routerDataId}
-                        /> }
+                        />
+                }
                 { this.props.nivel === 2 && <TaskCreate/> }
             </div>
         );
