@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import Header from '../../Elements/Header/Header';
-import DashBoard from '../../Elements/DashBoard/DashBoard';
+import Header from '../../../components/UI/Header/Header';
+import DashBoard from '../../../components/UI/DashBoard/DashBoard';
 
 export default class Add extends React.Component< {}, {} >
 {
@@ -9,9 +9,9 @@ export default class Add extends React.Component< {}, {} >
     {
         return (
             <main className="Main">
-                <Header nivel={2}/>
+                <Header pagina={2}/>
 
-                <DashBoard nivel={2}/>
+                <DashBoard pagina={2}/>
             </main>
         );
     };

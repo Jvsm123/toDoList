@@ -1,8 +1,8 @@
 import { Route, BrowserRouter } from 'react-router-dom';
 
-import Add from "./comps/Layouts/Add/Add";
-import ToDo from "./comps/Layouts/ToDo/ToDo";
-import Details from "./comps/Layouts/Details/Details";
+import Add from "./ToDo/Add/Add";
+import List from "./ToDo/List/ToDo";
+import Details from "./ToDo/Details/Details";
 
 export default class Routes extends Route
 {
@@ -10,7 +10,7 @@ export default class Routes extends Route
     {
         return (
             <BrowserRouter>
-                <Route exact component={ ToDo } path="/"/>
+                <Route exact component={ List } path="/"/>
                 <Route exact component={ Details } path="/details"/>
                 <Route exact component={ Add } path="/add"/>
             </BrowserRouter>

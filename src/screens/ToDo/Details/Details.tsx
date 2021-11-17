@@ -1,7 +1,7 @@
 import * as React from 'react';
 
-import Header from '../../Elements/Header/Header';
-import DashBoard from '../../Elements/DashBoard/DashBoard';
+import Header from '../../../components/UI/Header/Header';
+import DashBoard from '../../../components/UI/DashBoard/DashBoard';
 
 type StateLocation =
 {
@@ -25,12 +25,12 @@ export default class Details extends React.Component< Props, any >
         return (
             <main className="Main">
                 <Header
-                    nivel={1}
+                    pagina={1}
                     router={ this.props.location.state.dados[0] }
                 />
              
                 <DashBoard
-                    nivel={1}
+                    pagina={1}
                     routerDataTasks={ this.props.location.state.dados[1] }
                     routerDataId={ this.props.location.state.dados[2] }
                 />

@@ -1,9 +1,9 @@
 import { Component } from 'react';
 import { Redirect, Link } from 'react-router-dom';
-import axios from 'axios';
+import { Api } from "../../Functions/Api";
 
-import Sino from "../../../assets/img/bell.svg";
-import Tags from "../../../assets/img/tags.svg";
+import Sino from "../../../assets/icons/bell.svg";
+import Tags from "../../../assets/icons/tags.svg";
 
 type State =
 {
@@ -35,39 +35,10 @@ export default class TaskCreate extends Component< {}, State >
         const { Nome, Tempo, Feito, Categoria } = this.state;
      
         ( Nome !== null && Tempo !== null )
-        ?   axios.get( "http://localhost:3001/dados" ).then( (i: any) =>
-            {
-                const dado = i.data.filter( (j: any) => j.id === Categoria );
-             
-                ( dado.length < 1 )
-                ?   axios.post( `http://localhost:3001/dados`,
-                    {
-                        id: Categoria,
-                        Tarefas: [
-                        {
-                            Nome: Nome,
-                            Tempo: Tempo,
-                            Feito: Feito
-                        }]
-                    })
-                    .then( () => this.setState( { redirectTo: "/"} ) )
-                    .catch( (err) => console.log(err) )
-                 
-                :   axios.put( `http://localhost:3001/dados/${Categoria}`,
-                    {
-                        id: dado[0].id,
-                        Tarefas: [ ...dado[0].Tarefas,
-                        {
-                            Nome: Nome,
-                            Tempo: Tempo,
-                            Feito: Feito
-                        }]
-                    })
-                    .then( () => this.setState({ redirectTo: "/"}) )
-                    .catch( (err) => console.log(err) );
-            })
+        ? Api.create( { Nome, Tempo, Feito, Categoria } )
+                .then( () => this.setState( { redirectTo: "/" } ) )
          
-        :   alert("Dados Invalidos!");
+        : alert("Dados Invalidos!");
     };
  
     render(): React.ReactElement<HTMLElement>
@@ -82,6 +53,7 @@ export default class TaskCreate extends Component< {}, State >
                     placeholder="O que tem em mente?"
                     onChange={(e) => this.setState({ Nome: e.target.value })}
                 />
+             
                 <div className="time">
                     <img src={Sino} alt="#"/>
                     <input
@@ -90,6 +62,7 @@ export default class TaskCreate extends Component< {}, State >
                         onChange={(e) => this.setState({ Tempo: e.target.value })}
                     />
                 </div>
+             
                 <div className="tag">
                     <img src={Tags} alt="#"/>
                     <select
@@ -105,6 +78,7 @@ export default class TaskCreate extends Component< {}, State >
                         <option value="Lembrete">Lembrete</option>
                     </select>
                 </div>
+             
                 <div className="btnControl">
                     <button
                         className="btn"
@@ -116,6 +90,7 @@ export default class TaskCreate extends Component< {}, State >
                         <button>Cancelar</button>
                     </Link>
                 </div>
+             
             </div>
         );
     };
