@@ -13,7 +13,7 @@
         width: 70%;
         font-size: 20pt;
      
-        &::placeholder { color: black };
+        &::placeholder { color: $FUNDO };
     }
  
     .time
@@ -30,7 +30,6 @@
      
         .dataInput
         {
-            width: 14rem;
             padding-right: 0px;
             margin-bottom: 0px;
             background-color: transparent;
@@ -59,8 +58,14 @@
             font-size: 20pt;
             background-color: transparent;
             color: white;
+            outline: none;
          
             &:hover { cursor: pointer };
+         
+            option
+            {
+                background-color: $FUNDO;
+            }
         }
     };
  

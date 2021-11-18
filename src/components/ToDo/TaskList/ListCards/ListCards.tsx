@@ -20,17 +20,17 @@ export default class ListCard extends Component< Props, {} >
     idTag: string | undefined;
     totalTaskDisplay: string | undefined;
     tarefas: Array<Object> | undefined;
- 
+
     constructor( props: Props )
     {
         super( props );
-     
+
         this.iconPath = "";
         this.idTag = "";
         this.totalTaskDisplay = "";
-     
+
         const categorias: Array<Object> =
-        [
+            [
             {Compras: Compras},
             {Viagem: Viagem},
             {Casa: Casa},
@@ -40,39 +40,39 @@ export default class ListCard extends Component< Props, {} >
             {Hobby: Hobby},
             {Lembrete: Lembrete}
         ];
-     
+
         const res = CardHandler.handler(
-        {
-            tasks: props.tasks,
-            categorias
-        });
-     
-        if(res)
-        {
-            this.iconPath = res.iconPath;
-            this.idTag = res.tag;
-            this.totalTaskDisplay = res.taskDisplay;
-            this.tarefas = res.tarefas
-        };
+            {
+                tasks: props.tasks,
+                categorias
+            });
+
+            if(res)
+                {
+                    this.iconPath = res.iconPath;
+                    this.idTag = res.tag;
+                    this.totalTaskDisplay = res.taskDisplay;
+                    this.tarefas = res.tarefas
+                };
     };
- 
+
     render()
     {
         return (
-            <div className="Card">
-                <img src={ this.iconPath } alt="#"/>
-                <Link to={
+            <Link className="OuterCard" to={
                 {
-                    pathname: "/details",
-                    state: { dados: [this.iconPath, this.tarefas, this.idTag] }
+                pathname: "/details",
+                state: { dados: [this.iconPath, this.tarefas, this.idTag] }
                 }}
-                >
+            >
+                <div className="Card">
+                    <img src={ this.iconPath } alt="#"/>
                     <div className="info">
                         <h2> { this.idTag } </h2>
                         <h5> { this.totalTaskDisplay } </h5>
                     </div>
-                </Link>
-            </div>
+                </div>
+            </Link>
         );
     };
 };

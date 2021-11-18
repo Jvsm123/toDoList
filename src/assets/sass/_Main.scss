@@ -3,13 +3,13 @@
 @import "./global.scss";
 
 //Layouts's
-@import "./comps/ToDo.scss";
+@import "./components/ToDo.scss";
 
-//Elementos
-@import "./comps/Elementos/Header.scss";
-@import "./comps/Elementos/ButtonAdd.scss";
-@import "./comps/Elementos/Card.scss";
-@import "./comps/Elementos/DashBoard.scss";
-@import "./comps/Elementos/TaskInfo.scss";
-@import "./comps/Elementos/TaskCreate.scss";
-@import "./comps/Elementos/TaskCards.scss";
+//Elements
+@import "./components/Elements/Header.scss";
+@import "./components/Elements/ButtonAdd.scss";
+@import "./components/Elements/DashBoard.scss";
+@import "./components/Elements/TaskInfo.scss";
+@import "./components/Elements/TaskCreate.scss";
+@import "./components/Elements/TaskList.scss";
+@import "./components/Elements/ListCards.scss";

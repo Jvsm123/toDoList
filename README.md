@@ -1,7 +1,7 @@
 # ToDoList
 
-##Um app para fazer o dever de casa!
-
+## Um app para fazer o dever de casa!
+ 
     -Tecnologias:
     [ x ] Typescript
     [ x ] Sass

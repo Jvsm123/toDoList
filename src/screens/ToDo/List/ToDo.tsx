@@ -6,7 +6,7 @@ import DashBoard from '../../../components/UI/DashBoard/DashBoard';
 
 export default class ToDo extends Component< {}, {} >
 {
-    render(): React.ReactELement<HTMLElement>
+    render(): React.ReactElement<HTMLElement>
     {
         return (
             <main className="Main">

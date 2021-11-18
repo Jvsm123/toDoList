@@ -66,7 +66,7 @@ export default class TaskCreate extends Component< {}, State >
                 <div className="tag">
                     <img src={Tags} alt="#"/>
                     <select
-                        onChange={ (e) => this.setState( { Categoria: e.target.value} ) }
+                        onChange={ (e) => this.setState( { Categoria: e.target.value } ) }
                     >
                         <option value="Compras">Compras</option>
                         <option value="Viagem">Viagem</option>

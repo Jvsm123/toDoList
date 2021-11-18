@@ -8,7 +8,7 @@ type Props = { pagina: Number, router?: string | undefined };
 
 export default class Header extends Component< Props, {} >
 {
-    render(): React.ReactELement<HTMLElement>
+    render(): React.ReactElement<HTMLElement>
     {
         return (
             <div className="Header">
