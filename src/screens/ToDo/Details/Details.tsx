@@ -1,4 +1,4 @@
-import * as React from 'react';
+import { Component } from 'react';
 
 import Header from '../../../components/UI/Header/Header';
 import DashBoard from '../../../components/UI/DashBoard/DashBoard';
@@ -18,7 +18,7 @@ type Props =
     location: StateLocation
 };
 
-export default class Details extends React.Component< Props, any >
+export default class Details extends Component< Props, any >
 {
     render(): React.ReactElement<HTMLElement>
     {

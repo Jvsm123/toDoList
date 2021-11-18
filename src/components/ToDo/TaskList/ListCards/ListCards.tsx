@@ -41,8 +41,11 @@ export default class ListCard extends Component< Props, {} >
             {Lembrete: Lembrete}
         ];
      
-        const res = CardHandler
-            .handler( { tasks: props.tasks, categorias } );
+        const res = CardHandler.handler(
+        {
+            tasks: props.tasks,
+            categorias
+        });
      
         if(res)
         {

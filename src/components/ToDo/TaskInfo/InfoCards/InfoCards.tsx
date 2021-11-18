@@ -48,7 +48,7 @@ export default class TaskCards extends Component< Props, State >
                  
                 <div className="taskControl">
                     <img src={ Deleter } alt="del"
-                        onClick={() => Api( 1, [ Nome, Tempo, Feito, Id ]) }
+                        onClick={() => Api( 1, [ Nome, Tempo, Feito, Id ] ) }
                     />
                     { Feito &&
                         <input type="checkbox" checked

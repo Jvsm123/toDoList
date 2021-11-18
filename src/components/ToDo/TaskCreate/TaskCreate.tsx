@@ -36,22 +36,22 @@ export default class TaskCreate extends Component< {}, State >
      
         ( Nome !== null && Tempo !== null )
         ? Api.create( { Nome, Tempo, Feito, Categoria } )
-                .then( () => this.setState( { redirectTo: "/" } ) )
+            .then( () => this.setState( { redirectTo: "/" } ) )
          
-        : alert("Dados Invalidos!");
+        : alert( "Dados Invalidos!" );
     };
  
     render(): React.ReactElement<HTMLElement>
     {
-        if(this.state.redirectTo)
-            return <Redirect to={this.state.redirectTo}/>
+        if( this.state.redirectTo )
+            return <Redirect to={ this.state.redirectTo }/>
      
         return (
             <div className="TaskCreate">
                 <input
                     type="text"
                     placeholder="O que tem em mente?"
-                    onChange={(e) => this.setState({ Nome: e.target.value })}
+                    onChange={ (e) => this.setState( { Nome: e.target.value } ) }
                 />
              
                 <div className="time">
@@ -59,14 +59,14 @@ export default class TaskCreate extends Component< {}, State >
                     <input
                         type="date"
                         className="dataInput"
-                        onChange={(e) => this.setState({ Tempo: e.target.value })}
+                        onChange={ (e) => this.setState( { Tempo: e.target.value } ) }
                     />
                 </div>
              
                 <div className="tag">
                     <img src={Tags} alt="#"/>
                     <select
-                        onChange={(e) => this.setState({Categoria: e.target.value})}
+                        onChange={ (e) => this.setState( { Categoria: e.target.value} ) }
                     >
                         <option value="Compras">Compras</option>
                         <option value="Viagem">Viagem</option>
@@ -82,7 +82,7 @@ export default class TaskCreate extends Component< {}, State >
                 <div className="btnControl">
                     <button
                         className="btn"
-                        onClick={() => this.api()}
+                        onClick={ () => this.api() }
                     >
                         Criar
                     </button>

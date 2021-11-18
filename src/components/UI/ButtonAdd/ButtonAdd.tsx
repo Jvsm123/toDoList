@@ -3,7 +3,7 @@ import { Component } from 'react';
 
 export default class ButtonAdd extends Component
 {
-    render()
+    render(): React.ReactElement<HTMLElement>
     {
         return (
             <Link to="/add">

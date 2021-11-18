@@ -7,7 +7,7 @@ import TaskCreate from '../../ToDo/TaskCreate/TaskCreate';
 type Props =
 {
     pagina: Number;
-    routerDataTasks?: [Object];
+    routerDataTasks?: [ Object ];
     routerDataId?: string;
 };
 
@@ -21,8 +21,8 @@ export default class DashBoard extends Component< Props, {} >
              
                 { this.props.pagina === 1
                     && <TaskInfo
-                            tasks={this.props.routerDataTasks}
-                            id={this.props.routerDataId}
+                            tasks={ this.props.routerDataTasks }
+                            id={ this.props.routerDataId }
                         />
                 }
              

@@ -14,7 +14,7 @@ interface IParms
 
 export class CardHandler
 {
-    static handler( {tasks, categorias }: IParms ): cardType | undefined
+    static handler( { tasks, categorias }: IParms ): cardType | undefined
     {
         if( tasks )
         {

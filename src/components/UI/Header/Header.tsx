@@ -8,7 +8,7 @@ type Props = { pagina: Number, router?: string | undefined };
 
 export default class Header extends Component< Props, {} >
 {
-    render()
+    render(): React.ReactELement<HTMLElement>
     {
         return (
             <div className="Header">
@@ -23,14 +23,14 @@ export default class Header extends Component< Props, {} >
                 { this.props.pagina === 1 &&
                   <div className="circleIconBtn">
                     { this.props.router &&
-                      <img className="iconBtn" src={this.props.router} alt="#" />
+                      <img className="iconBtn" src={ this.props.router } alt="#"/>
                     }
                   </div>
                 }
              
                 { this.props.pagina === 2 &&
                   <div className="circleIconBtn">
-                    <img className="iconBtn" src={AddTask} alt="#" />
+                    <img className="iconBtn" src={ AddTask } alt="#"/>
                   </div>
                 }
              
@@ -38,7 +38,7 @@ export default class Header extends Component< Props, {} >
              
                 { this.props.pagina > 0 &&
                   <Link to="/" className="circleIconBtn">
-                    <img className="iconBtn return" src={Voltar} alt="#" />
+                    <img className="iconBtn return" src={ Voltar } alt="#"/>
                   </Link>
                 }
             </div>

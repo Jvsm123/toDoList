@@ -30,7 +30,7 @@ export class Api
      
         if( task.length < 1 )
         {
-            const { data } = await axios.post("http://localhost:3001/dados",
+            const { data } = await axios.post( "http://localhost:3001/dados",
             {
                 id: Categoria,
                 Tarefas:
@@ -45,7 +45,7 @@ export class Api
         }
         else
         {
-            const { data } = await axios.put(`http://localhost:3001/dados/${Categoria}`,
+            const { data } = await axios.put( `http://localhost:3001/dados/${Categoria}`,
             {
                 id: task[0].id,
                 Tarefas: [ ...task[0].Tarefas,
@@ -59,7 +59,7 @@ export class Api
             return data;
         };
     };
-
+ 
     static async read( Id?: string ): Promise< AxiosResponse >
     {
         if( Id )

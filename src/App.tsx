@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Routes from "./screens/routes";
+import Pages from "./screens/pages";
 
 export default class App extends Component< {}, {} >
 {

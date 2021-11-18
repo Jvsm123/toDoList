@@ -7,12 +7,12 @@ import InfoCards from './InfoCards/InfoCards';
 type State =
 {
     redirectTo: null | string;
-    tasks: Array<any>;
+    tasks: Array< any >;
 };
 
 type Props =
 {
-    tasks: [Object] | undefined;
+    tasks: [ Object ] | undefined;
     id: string | undefined;
 };
 
@@ -22,16 +22,12 @@ export default class TasksInfo extends Component< Props, State >
     {
         super( props );
      
-        this.state =
-        {
-            redirectTo: null,
-            tasks: []
-        };
+        this.state = { redirectTo: null, tasks: [] };
      
-        this.api = this.api.bind(this);
+        this.api = this.api.bind( this );
     };
  
-    async api( opt: number, task: Array<any> ): Promise< void >
+    async api( opt: number, task: Array< any > ): Promise< void >
     {
         const newData =
         {
@@ -45,30 +41,30 @@ export default class TasksInfo extends Component< Props, State >
         {
             const { data } = await Api.delete( { Id: task[3], newData } );
          
-            if( data.Tarefas ) this.setState( {tasks: data.Tarefas} );
-            else this.setState( {redirectTo: "/"} );
+            if( data.Tarefas ) this.setState( { tasks: data.Tarefas } );
+            else this.setState( { redirectTo: "/" } );
         };
     };
  
     componentDidMount(): void
     {
-        this.props.tasks && this.setState( { tasks: this.props.tasks} )
+        this.props.tasks && this.setState( { tasks: this.props.tasks } );
     };
  
     render(): React.ReactElement<HTMLElement>
     {
-        if(this.state.redirectTo)
-            return <Redirect to={this.state.redirectTo}/>
+        if( this.state.redirectTo )
+            return <Redirect to={ this.state.redirectTo }/>
      
         return (
             <div className="TaskInfo">
                 { this.state.tasks.length > 0
                     && this.state.tasks.map( (i: any) =>
                         <InfoCards
-                            task={i}
-                            id={this.props.id}
-                            api={this.api}
-                            setState={this.setState}
+                            task={ i }
+                            id={ this.props.id }
+                            api={ this.api }
+                            setState={ this.setState }
                         />
                     )
                 }
