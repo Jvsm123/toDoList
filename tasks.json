@@ -1,29 +1,3 @@
 {
-  "dados": [
-    {
-      "id": "Lembrete",
-      "Tarefas": [
-        {
-          "Nome": "alguma coisa",
-          "Tempo": "2021-11-15",
-          "Feito": true
-        }
-      ]
-    },
-    {
-      "id": "Compras",
-      "Tarefas": [
-        {
-          "Nome": "mais coisas aqui",
-          "Tempo": "2021-11-10",
-          "Feito": false
-        },
-        {
-          "Nome": "sads",
-          "Tempo": "2021-11-19",
-          "Feito": false
-        }
-      ]
-    }
-  ]
+  "dados": []
 }
